@@ -130,7 +130,14 @@ export default class AgentManager {
   {agent_scratchpad}`),
     ]);
 
-    const llm = new ChatOpenAI({});
+    const llm = new ChatOpenAI({}, {
+      basePath: "https://oai.hconeai.com/v1",
+      baseOptions: {
+        headers: {
+          "Helicone-Auth": `Bearer ${process.env.HELICONE_API_KEY}`,
+        },
+      },
+    });
 
     const llmChain = new LLMChain({
       prompt: chatPrompt,

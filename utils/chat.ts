@@ -241,6 +241,13 @@ const chat = async ({
         handleLLMNewToken: stream,
       },
     ],
+  },{
+    basePath: "https://oai.hconeai.com/v1",
+    baseOptions: {
+      headers: {
+        "Helicone-Auth": `Bearer ${process.env.HELICONE_API_KEY}`,
+      },
+    },
   });
 
   const output = await model.call(messages);
@@ -278,7 +285,8 @@ const chat = async ({
   } catch {}
 
   try {
-    model.modelName = 'gpt-4';
+    //model.modelName = 'gpt-4';
+    model.modelName = 'gpt-3.5-turbo-16k';
     const sourceRequest = await model.call(
       [
         new HumanChatMessage(

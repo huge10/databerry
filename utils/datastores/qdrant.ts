@@ -38,7 +38,14 @@ export class QdrantManager extends ClientManager<DatastoreType> {
   constructor(datastore: DatastoreType) {
     super(datastore);
 
-    this.embeddings = new OpenAIEmbeddings();
+    this.embeddings = new OpenAIEmbeddings({}, {
+      basePath: "https://oai.hconeai.com/v1",
+      baseOptions: {
+        headers: {
+          "Helicone-Auth": `Bearer ${process.env.HELICONE_API_KEY}`,
+        },
+      },
+    });
 
     this.client = axios.create({
       baseURL: process.env.QDRANT_API_URL,
