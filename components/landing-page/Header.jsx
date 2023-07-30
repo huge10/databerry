@@ -153,7 +153,7 @@ export function Header() {
               </span>
             </Button> */}
             {/* Change following link href with /signin for local signin */}
-            <Link href="https://app.chaindesk.ai/signin">
+            <Link href="/signin">
               <Button variant="outlined" sx={{ borderRadius: 100 }}>
                 Sign In
               </Button>

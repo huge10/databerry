@@ -35,6 +35,8 @@ class CustomDocument extends Document {
             rel="stylesheet"
           />
 
+{/*
+
           <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-QTN3QP6PKB"
             strategy="afterInteractive"
@@ -68,6 +70,9 @@ class CustomDocument extends Document {
           <Script id="rewardfull" strategy="afterInteractive">
             {`(function(w,r){w._rwq=r;w[r]=w[r]||function(){(w[r].q=w[r].q||[]).push(arguments)}})(window,'rewardful');`}
           </Script>
+
+  */}
+  
         </Head>
         <body>
           {getInitColorSchemeScript()}
