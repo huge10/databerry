@@ -39,7 +39,14 @@ export class QdrantManager extends ClientManager<DatastoreType> {
   constructor(datastore: DatastoreType) {
     super(datastore);
 
-    this.embeddings = new OpenAIEmbeddings();
+    this.embeddings = new OpenAIEmbeddings({}, {
+      basePath: "https://oai.hconeai.com/v1",
+      baseOptions: {
+        headers: {
+          "Helicone-Auth": `Bearer ${process.env.HELICONE_API_KEY}`,
+        },
+      },
+    });
 
     if (process.env.APP_ENV === 'test') {
       this.embeddings.embedDocuments = embedDocuments;

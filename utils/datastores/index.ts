@@ -11,7 +11,7 @@ import { QdrantManager } from './qdrant';
 export class DatastoreManager {
   datastore: Datastore;
   manager: ClientManager<Datastore>;
-  chunkSize: number = 256;
+  chunkSize: number = 1000; // Was 256
 
   managersMap = {
     [DatastoreType.qdrant]: QdrantManager,
