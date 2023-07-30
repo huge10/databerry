@@ -245,6 +245,13 @@ const chat = async ({
         handleLLMNewToken: stream,
       },
     ],
+  },{
+    basePath: "https://oai.hconeai.com/v1",
+    baseOptions: {
+      headers: {
+        "Helicone-Auth": `Bearer ${process.env.HELICONE_API_KEY}`,
+      },
+    },
   });
 
   if (process.env.APP_ENV === 'test') {

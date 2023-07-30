@@ -21,6 +21,8 @@ export const envSchema = z.object({
   CRISP_HOOK_SECRET: z.string().optional(),
   CRISP_TOKEN_ID: z.string().optional(),
   CRISP_TOKEN_KEY: z.string().optional(),
+
+  HELICONE_API_KEY: z.string().min(1),
 });
 
 // if (typeof window === 'undefined') {
