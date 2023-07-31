@@ -304,7 +304,8 @@ const chat = async ({
 
   if (includeSources) {
     try {
-      model.modelName = 'gpt-4';
+      //model.modelName = 'gpt-4';
+      model.modelName = 'gpt-3.5-turbo-16k';
       const sourceRequest = await model.call(
         [
           new HumanChatMessage(
